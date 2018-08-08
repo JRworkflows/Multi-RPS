@@ -1,0 +1,52 @@
+html {
+    width: 1720px;
+    height: 720px;
+}
+
+body {
+    width: 1720px;
+    height: 720px;
+    background-color: #2e3b4f;
+}
+
+
+/* div {
+    width: 100%
+} */
+
+.xtraStuff {
+    height: 40px;
+    width: 100%;
+    background-color: #560c0f
+}
+
+#footerDiv {
+    width: 1720px;
+    position: absolute;
+    bottom: 0
+}
+
+.otherStuff {
+    line-height: 24px;
+    font-size: 12px;
+    font-family: 'Do Hyeon', sans-serif;
+    color: black
+}
+
+h6 {
+    text-align: center
+}
+
+
+/* #gameBx {
+    align-items: center;
+    justify-content: space-between
+} */
+
+.stuffDiv {
+    height: 200px;
+    width: 400px;
+    background-color: black;
+    align-items: center;
+    justify-content: space-between
+}

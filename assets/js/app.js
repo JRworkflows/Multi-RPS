@@ -9,9 +9,9 @@
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyA5eYKsB8T2q6rMGdKSvac6eQsWTzsZEjE",
-    authDomain: "fir-recent-user.firebaseapp.com",
-    databaseURL: "https://fir-recent-user.firebaseio.com",
-    storageBucket: "fir-recent-user.appspot.com"
+    authDomain: "multi-rps-a7b5a.firebaseapp.com",
+    databaseURL: "https://multi-rps-a7b5a.firebaseio.com",
+    storageBucket: "multi-rps-a7b5a.appspot.com"
 };
 
 firebase.initializeApp(config);
@@ -21,24 +21,40 @@ var database = firebase.database();
 
 // Initial Values
 
-playerOneName = $("#p1Name").text().trim();
-playerOneScore = $("#p1Score").val().trim();
-playerOneWins = $("#p1Wins").val().trim();
-playerOneLosses = $("#p1Losses").val().trim();
-
-playerTwoName = $("#p1Name").text().trim();
-playerTwoScore = $("#p1Score").val().trim();
-playerTwoWins = $("#p1Wins").val().trim();
-playerTwoLosses = $("#p1Losses").val().trim();
-
-chatInput = $("#chatInput").text().trim();
-chatButton = ("#chatButton");
-chatDisplay = $("#chatDisplay").chatInput
-
+var chat = "";
+chat = $("#displayed-data").appendchild();
 //  chat button submit
 $("#chatButton").on("click", function(event) {
+    // Prevent the page from refreshing
+    event.preventDefault();
+    //  get input
+    chat = $("#displayed-data").text().trim();
+    // change firebase info
 
-})
+    database.ref().set({
+        chat: chat
+    });
+});
+
+// When changes occurs it will print them to console and html
+database.ref().on("value", function(snapshot) {
+
+    // Print the initial data to the console.
+    console.log(snapshot.val());
+
+    // Log the value of the various properties
+    console.log(snapshot.val().name);
+    console.log(snapshot.val().age);
+    console.log(snapshot.val().phone);
+
+    // Change the HTML
+    $("#displayed-data").text(snapshot.val().chat
+        //     // If any errors are experienced, log them to console.
+        // },
+        // function(errorObject) {
+        //     console.log("The read failed: " + errorObject.code);
+    )
+});
 
 
 
